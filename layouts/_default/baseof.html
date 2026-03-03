@@ -17,7 +17,11 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/fonts.css">
-  <link rel="stylesheet" href="/css/style.css">
+  {{ with resources.Get "css/main.css" }}
+    {{ with . | css.TailwindCSS }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+  {{ end }}
 </head>
 <body>
 
@@ -35,6 +39,11 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
+      <nav class="footer-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms &amp; Conditions</a>
+        <a href="/sms-sample/">SMS Sample</a>
+      </nav>
       <p>&copy; {{ now.Year }} Peoria IT. All rights reserved.</p>
     </div>
   </footer>
