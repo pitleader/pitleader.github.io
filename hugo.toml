@@ -1,0 +1,16 @@
+baseURL = 'https://www.peoriait.com/'
+languageCode = 'en-us'
+title = 'Peoria IT: Your One-Stop Shop for All Things Tech'
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  description = 'Welcome to Peoria IT, your trusted partner for all your technology needs. Whether you are looking to build a custom PC, repair your existing device, or manage your IT infrastructure, we have you covered.'
+  phone = '(309) 839-2184'
+  phoneTel = '+13098392184'
+  address = '4530 N Brandywine Dr'
+  ogImage = 'images/og-screenshot.jpg'
+  favicon = 'images/logo_transparent_background_443d.png'
+  logo = 'images/logo_transparent_background_36e1.png'
+
+[markup.goldmark.renderer]
+  unsafe = true

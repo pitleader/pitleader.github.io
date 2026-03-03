@@ -1,0 +1,17 @@
+{{- $icons := split (.Get "icons") "," -}}
+{{- $parts := split .Inner "---" -}}
+{{- $header := index $parts 0 -}}
+{{- $items := after 1 $parts -}}
+<section class="section{{ with .Get "bg" }} bg-{{ . }}{{ end }}"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  <div class="container">
+    <div class="section-header">{{ $header | $.Page.RenderString }}</div>
+    <div class="card-grid-4">
+      {{- range $i, $item := $items }}
+      <div class="card">
+        {{ with index $icons $i }}<img class="icon" src="/images/{{ . }}" alt="" width="40" height="40">{{ end }}
+        {{ $item | $.Page.RenderString }}
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>

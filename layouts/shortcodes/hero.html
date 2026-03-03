@@ -1,0 +1,9 @@
+{{- $content := .Inner | .Page.RenderString -}}
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      {{ $content }}
+    </div>
+    <img class="hero-image" src="/images/{{ .Get "image" }}" alt="Technology workspace" width="1200" height="800">
+  </div>
+</section>

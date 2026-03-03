@@ -1,0 +1,19 @@
+{{- $parts := split .Inner "---" -}}
+{{- $header := index $parts 0 -}}
+{{- $items := after 1 $parts -}}
+<section class="section{{ with .Get "bg" }} bg-{{ . }}{{ end }}"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  <div class="container">
+    <div class="section-header">{{ $header | $.Page.RenderString }}</div>
+    <table class="service-table">
+      <tbody>
+        {{- range $items }}
+        {{- $cells := split . "|||" }}
+        <tr>
+          <td class="service-name">{{ index $cells 0 | plainify | strings.TrimSpace }}</td>
+          <td class="service-desc">{{ index $cells 1 | plainify | strings.TrimSpace }}</td>
+        </tr>
+        {{- end }}
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+{{- $parts := split .Inner "---" -}}
+{{- $header := index $parts 0 -}}
+{{- $items := after 1 $parts -}}
+<section class="section contact"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  <div class="container">
+    <div class="section-header">{{ $header | $.Page.RenderString }}</div>
+    <div class="contact-grid">
+      {{- range $items }}
+      <div class="contact-item">{{ . | $.Page.RenderString }}</div>
+      {{- end }}
+    </div>
+  </div>
+</section>

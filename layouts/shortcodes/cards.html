@@ -1,0 +1,13 @@
+{{- $parts := split .Inner "---" -}}
+{{- $header := index $parts 0 -}}
+{{- $items := after 1 $parts -}}
+<section class="section{{ with .Get "bg" }} bg-{{ . }}{{ end }}"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  <div class="container">
+    <div class="section-header">{{ $header | $.Page.RenderString }}</div>
+    <div class="card-grid">
+      {{- range $items }}
+      <div class="card">{{ . | $.Page.RenderString }}</div>
+      {{- end }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ .Site.Title }}">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ .Site.Params.favicon | absURL }}">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <img src="{{ .Site.Params.logo | absURL }}" alt="Peoria IT logo" width="40" height="40">
+      Peoria IT
+    </a>
+    <a href="tel:{{ .Site.Params.phoneTel }}" class="navbar-contact">{{ .Site.Params.phone }}</a>
+  </nav>
+
+  {{ block "main" . }}{{ end }}
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; {{ now.Year }} Peoria IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

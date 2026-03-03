@@ -1,0 +1,16 @@
+{{- $parts := split .Inner "---" -}}
+{{- $header := index $parts 0 -}}
+{{- $items := after 1 $parts -}}
+<section class="section{{ with .Get "bg" }} bg-{{ . }}{{ end }}"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  <div class="container">
+    <div class="section-header">{{ $header | $.Page.RenderString }}</div>
+    <div class="side-layout">
+      <img src="/images/{{ .Get "image" }}" alt="Professional using a workstation" width="1200" height="800">
+      <div class="features-stack">
+        {{- range $items }}
+        <div class="feature">{{ . | $.Page.RenderString }}</div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>
