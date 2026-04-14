@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(head:*)",
+      "Bash(sed:*)",
+      "Bash(grep:*)",
+      "Bash(echo === $\\(basename $f\\) ===:*)",
+      "Bash(do echo:*)",
+      "Bash(cp:*)",
+      "WebSearch",
+      "WebFetch(domain:gohugo.io)",
+      "Bash(hugo version:*)",
+      "Bash(hugo:*)"
+    ]
+  }
+}
