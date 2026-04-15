@@ -1,0 +1,19 @@
+<section class="section{{ with .bg }} bg-{{ . }}{{ end }}"{{ with .id }} id="{{ . }}"{{ end }}>
+  <div class="container">
+    <div class="section-header">
+      <h2 id="{{ .heading | anchorize }}">{{ .heading }}</h2>
+      <p>{{ .description | markdownify }}</p>
+    </div>
+    <div class="side-layout">
+      <img src="/images/{{ .image }}" alt="Professional using a workstation" width="1200" height="800">
+      <div class="features-stack">
+        {{- range .items }}
+        <div class="feature">
+          <h3 id="{{ .title | anchorize }}">{{ .title }}</h3>
+          <p>{{ .description | markdownify }}</p>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>

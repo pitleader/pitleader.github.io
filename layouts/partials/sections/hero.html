@@ -1,0 +1,9 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <h1 id="{{ .heading | anchorize }}">{{ .heading }}</h1>
+      <p>{{ .description | markdownify }}</p>
+    </div>
+    <img class="hero-image" src="/images/{{ .image }}" alt="Technology workspace" width="1200" height="800">
+  </div>
+</section>

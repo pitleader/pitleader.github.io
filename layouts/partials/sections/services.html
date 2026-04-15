@@ -1,0 +1,18 @@
+<section class="section{{ with .bg }} bg-{{ . }}{{ end }}"{{ with .id }} id="{{ . }}"{{ end }}>
+  <div class="container">
+    <div class="section-header">
+      <h2 id="{{ .heading | anchorize }}">{{ .heading }}</h2>
+      <p>{{ .description | markdownify }}</p>
+    </div>
+    <table class="service-table">
+      <tbody>
+        {{- range .items }}
+        <tr>
+          <td class="service-name">{{ .name }}</td>
+          <td class="service-desc">{{ .description }}</td>
+        </tr>
+        {{- end }}
+      </tbody>
+    </table>
+  </div>
+</section>

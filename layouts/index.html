@@ -1,3 +1,13 @@
 {{ define "main" }}
-{{ .Content }}
+{{ with .Params.sections }}
+  {{ with .hero }}{{ partial "sections/hero.html" . }}{{ end }}
+  {{ with .pc_builds }}{{ partial "sections/cards.html" . }}{{ end }}
+  {{ with .repairs }}{{ partial "sections/features.html" . }}{{ end }}
+  {{ with .patch_management }}{{ partial "sections/image-features.html" . }}{{ end }}
+  {{ with .cloud_backup }}{{ partial "sections/overlay.html" . }}{{ end }}
+  {{ with .workstation }}{{ partial "sections/side-features.html" . }}{{ end }}
+  {{ with .server_support }}{{ partial "sections/icon-cards.html" . }}{{ end }}
+  {{ with .advanced_services }}{{ partial "sections/services.html" . }}{{ end }}
+  {{ with .contact }}{{ partial "sections/contact.html" . }}{{ end }}
+{{ end }}
 {{ end }}
