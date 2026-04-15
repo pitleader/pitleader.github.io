@@ -1,0 +1,162 @@
+# TODO: Update base_url after deploying Cloudflare Worker OAuth proxy
+backend:
+  name: github
+  repo: pitleader/pitleader.github.io
+  branch: main
+  base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Sections"
+            name: "sections"
+            widget: "object"
+            fields:
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image" }
+
+              - label: "Custom PC Builds"
+                name: "pc_builds"
+                widget: "object"
+                fields:
+                  - { label: "ID", name: "id", widget: "hidden", default: "pc-builds" }
+                  - { label: "Background", name: "bg", widget: "hidden", default: "white" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string" }
+
+              - label: "Repairs"
+                name: "repairs"
+                widget: "object"
+                fields:
+                  - { label: "ID", name: "id", widget: "hidden", default: "repairs" }
+                  - { label: "Background", name: "bg", widget: "hidden", default: "linen" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string" }
+
+              - label: "Patch Management"
+                name: "patch_management"
+                widget: "object"
+                fields:
+                  - { label: "ID", name: "id", widget: "hidden", default: "patch-management" }
+                  - { label: "Background", name: "bg", widget: "hidden", default: "white" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string" }
+
+              - label: "Cloud Backup"
+                name: "cloud_backup"
+                widget: "object"
+                fields:
+                  - { label: "ID", name: "id", widget: "hidden", default: "cloud-backup" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string" }
+
+              - label: "Workstation Support"
+                name: "workstation"
+                widget: "object"
+                fields:
+                  - { label: "ID", name: "id", widget: "hidden", default: "workstation" }
+                  - { label: "Background", name: "bg", widget: "hidden", default: "linen" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string" }
+
+              - label: "Server Support"
+                name: "server_support"
+                widget: "object"
+                fields:
+                  - { label: "ID", name: "id", widget: "hidden", default: "server-support" }
+                  - { label: "Background", name: "bg", widget: "hidden", default: "white" }
+                  - label: "Icons"
+                    name: "icons"
+                    widget: "hidden"
+                    default: ["database.svg", "network-wired.svg", "camera-security.svg", "chart-simple.svg"]
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string" }
+
+              - label: "Advanced Services"
+                name: "advanced_services"
+                widget: "object"
+                fields:
+                  - { label: "ID", name: "id", widget: "hidden", default: "advanced-services" }
+                  - { label: "Background", name: "bg", widget: "hidden", default: "linen" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string" }
+
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "ID", name: "id", widget: "hidden", default: "contact" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
