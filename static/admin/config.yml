@@ -29,7 +29,7 @@ collections:
                   - { label: "Description", name: "description", widget: "text" }
                   - { label: "Image", name: "image", widget: "image" }
 
-              - label: "Custom PC Builds"
+              - label: "Custom Hardware Solutions"
                 name: "pc_builds"
                 widget: "object"
                 fields:
@@ -44,7 +44,7 @@ collections:
                       - { label: "Title", name: "title", widget: "string" }
                       - { label: "Description", name: "description", widget: "string" }
 
-              - label: "Repairs"
+              - label: "Break-Fix Support"
                 name: "repairs"
                 widget: "object"
                 fields:
@@ -59,7 +59,7 @@ collections:
                       - { label: "Title", name: "title", widget: "string" }
                       - { label: "Description", name: "description", widget: "string" }
 
-              - label: "Patch Management"
+              - label: "Managed Patch Management"
                 name: "patch_management"
                 widget: "object"
                 fields:
@@ -75,7 +75,7 @@ collections:
                       - { label: "Title", name: "title", widget: "string" }
                       - { label: "Description", name: "description", widget: "string" }
 
-              - label: "Cloud Backup"
+              - label: "Cloud Backup & Business Continuity"
                 name: "cloud_backup"
                 widget: "object"
                 fields:
@@ -90,7 +90,7 @@ collections:
                       - { label: "Title", name: "title", widget: "string" }
                       - { label: "Description", name: "description", widget: "string" }
 
-              - label: "Workstation Support"
+              - label: "Managed Workstation Support"
                 name: "workstation"
                 widget: "object"
                 fields:
@@ -106,7 +106,7 @@ collections:
                       - { label: "Title", name: "title", widget: "string" }
                       - { label: "Description", name: "description", widget: "string" }
 
-              - label: "Server Support"
+              - label: "Enterprise Server & Infrastructure"
                 name: "server_support"
                 widget: "object"
                 fields:
@@ -125,13 +125,14 @@ collections:
                       - { label: "Title", name: "title", widget: "string" }
                       - { label: "Description", name: "description", widget: "string" }
 
-              - label: "Advanced Services"
+              - label: "Cybersecurity & Advanced Services"
                 name: "advanced_services"
                 widget: "object"
                 fields:
                   - { label: "ID", name: "id", widget: "hidden", default: "advanced-services" }
                   - { label: "Background", name: "bg", widget: "hidden", default: "linen" }
                   - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
                   - label: "Items"
                     name: "items"
                     widget: "list"
