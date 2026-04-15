@@ -160,4 +160,5 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false, hint: "SEO meta description for this page (optional)" }
       - { label: "Body", name: "body", widget: "markdown" }
