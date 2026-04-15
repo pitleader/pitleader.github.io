@@ -11,6 +11,25 @@
   <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+
+  <!-- JSON-LD LocalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}",
+    "telephone": "{{ .Site.Params.phoneMSPTel }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ .Site.Params.address }}",
+      "addressLocality": "{{ .Site.Params.city }}",
+      "addressRegion": "{{ .Site.Params.state }}",
+      "postalCode": "{{ .Site.Params.zip }}"
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ .Site.Params.favicon | absURL }}">
