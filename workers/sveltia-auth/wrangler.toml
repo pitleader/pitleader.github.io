@@ -1,0 +1,11 @@
+name = "sveltia-cms-auth"
+main = "src/index.js"
+compatibility_date = "2026-04-14"
+
+[vars]
+# Public configuration — not secrets
+ALLOWED_DOMAINS = "www.peoriait.com,peoriait.com"
+
+# IMPORTANT: Do NOT put secrets here. Set them via:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET
